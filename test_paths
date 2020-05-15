@@ -23,7 +23,7 @@ def call(body) {
             stage("execute tests") {
                 steps {
                     script {
-                        println("${NAMESPACE}")
+                        println("Start of execute test")
                         try {
 
                             sh """
