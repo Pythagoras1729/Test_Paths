@@ -1,0 +1,43 @@
+def call(body) {
+    // evaluate the body block, and collect configuration into the object
+    def pipelineParams = [:]
+    body.resolveStrategy = Closure.DELEGATE_FIRST
+    body.delegate = pipelineParams
+    body()
+
+    // Pipeline Starts Here
+    pipeline {
+        agent {
+            label pipelineParams.nodeName
+        }//end of agent
+
+    environment {
+            http_proxy = "http://proxy-wsa.esl.cisco.com:80"
+            https_proxy = "http://proxy-wsa.esl.cisco.com:80"
+            CLUSTER_FQDN = "${env.CLUSTER_NAME}"
+            UTIL_REPO = "https://github3.cisco.com/cdna-qa/pipeline-utilities.git"
+            PYTHONWARNINGS = "ignore:Unverified HTTPS request"
+        }//end of environment
+
+        stages {
+            stage("execute tests") {
+                steps {
+                    script {
+                        println("${NAMESPACE}")
+                        try {
+
+                            sh """
+                           	export PYTHONPATH=\$PATH:\$(pwd):\$(pwd)/pns/pns/
+                        	echo "${PYTHONPATH}"
+
+                        	"""
+                        } catch (err) {
+                            println "Some Error while running the PNS_RATE_FINDER job"
+                            errorCondition = "true"
+                        }
+                    }//end of script
+                }//end of steps
+            }//end of stage
+
+        }
+    }
