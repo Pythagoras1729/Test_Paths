@@ -13,7 +13,7 @@
                             echo "path is ${env.PATH}" 
                             echo "Path is :"
                             echo %Path%
-                            set PYTHONPATH=%Path%
+                            set PYTHONPATH=%Path%;"${env.WORKSPACE}"
                         	echo " python path is : ${PYTHONPATH}"
 
                         	"""
