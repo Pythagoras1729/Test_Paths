@@ -9,9 +9,11 @@
                         try {
 
                             bat """
-                           	export PYTHONPATH=\$PATH:\$(pwd)
-                            echo "${env.WORKSPACE}
-                        	echo "${PYTHONPATH}"
+                            echo "workspace is : ${env.WORKSPACE}"
+                            echo "pwd is: ${pwd}"
+                           	set PYTHONPATH=\$PATH:\$(pwd)
+                            
+                        	echo " python path is : ${PYTHONPATH}"
 
                         	"""
                         } catch (err) {
