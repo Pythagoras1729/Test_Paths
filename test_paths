@@ -1,8 +1,5 @@
     // Pipeline Starts Here
     pipeline {
-        agent {
-            label pipelineParams.nodeName
-        }//end of agent
         stages {
             stage("execute tests") {
                 steps {
