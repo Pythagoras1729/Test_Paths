@@ -1,5 +1,6 @@
     // Pipeline Starts Here
     pipeline {
+    agent any
         stages {
             stage("execute tests") {
                 steps {
