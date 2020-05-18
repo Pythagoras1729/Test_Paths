@@ -10,7 +10,9 @@
 
                             bat """
                             echo "workspace is : ${env.WORKSPACE}"
-                            echo "path is ${env.PATH}"   
+                            echo "path is ${env.PATH}" 
+                            echo "Path is :"
+                            echo %PATH%
                             set PYTHONPATH=%PATH%
                         	echo " python path is : ${PYTHONPATH}"
 
