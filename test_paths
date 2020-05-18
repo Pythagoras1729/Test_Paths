@@ -10,8 +10,8 @@
 
                             bat """
                             echo "workspace is : ${env.WORKSPACE}"
-                            echo "path is ${env.PATH}" 
-                            echo "Path is :"
+                            echo " Jenkins path is ${env.PATH}" 
+                            echo " System Path is :"
                             echo %Path%
                             set PYTHONPATH=%Path%;"${env.WORKSPACE}"
                         	echo " python path is : ${PYTHONPATH}"
