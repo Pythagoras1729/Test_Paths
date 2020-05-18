@@ -13,6 +13,7 @@
                             echo " Jenkins path is ${env.PATH}" 
                             echo " System Path is :"
                             echo %Path%
+                            echo %PYTHONPATH%
                             set PYTHONPATH="${env.WORKSPACE};%PATH%"
                         	echo " python path is : ${PYTHONPATH}"                           
                             python --version
