@@ -15,7 +15,8 @@
                             echo %Path%
                             echo %PYTHONPATH%
                             set PYTHONPATH=${env.WORKSPACE};%PATH%
-                        	echo " python path is : ${PYTHONPATH}"                 
+                        	echo " python path is :"
+                            echo %PYTHONPATH%
                             
 
                         	"""
