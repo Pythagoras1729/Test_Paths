@@ -14,10 +14,9 @@
                             echo " System Path is :"
                             echo %Path%
                             echo %PYTHONPATH%
-                            set PYTHONPATH=$WORKSPACE:$PYTHONPATH
+                            set PYTHONPATH=\$PATH:\$(pwd):\$(pwd)/
+                        	echo \$PYTHONPATH
                             echo "${PYTHONPATH}"
-                        	echo " python path is :"
-                            echo %PYTHONPATH%
                             python --version
                             
 
