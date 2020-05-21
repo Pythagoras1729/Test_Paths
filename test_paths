@@ -14,7 +14,7 @@
                             echo " System Path is :"
                             echo %Path%
                             echo %PYTHONPATH%
-                            export PYTHONPATH=$WORKSPACE:$PYTHONPATH
+                            set PYTHONPATH=$WORKSPACE:$PYTHONPATH
                             echo "${PYTHONPATH}"
                         	echo " python path is :"
                             echo %PYTHONPATH%
